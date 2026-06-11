@@ -207,9 +207,9 @@ npm install react-router-dom react-hook-form bootstrap
 
 ## 👨‍💻 Author
 
-**Shaik Madeena**
+**Akash R**
 
-GitHub: https://github.com/madeena1431
+GitHub: https://github.com/Akashram31
 
 ---
 
