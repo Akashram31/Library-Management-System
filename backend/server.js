@@ -20,7 +20,7 @@ app.use('/api/auth',authRoutes);
 
 app.use('/api/books',bookRoutes);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT,()=>{
 
