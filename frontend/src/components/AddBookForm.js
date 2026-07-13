@@ -8,12 +8,14 @@ function AddBookForm(){
 
     const [message,setMessage] = useState('');
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const onSubmit = async(data)=>{
 
         const token = localStorage.getItem('token');
 
         const response = await fetch(
-            'http://localhost:5000/api/books/addbook',
+            `${API_URL}/api/books/addbook`,
             {
 
                 method:'POST',

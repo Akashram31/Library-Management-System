@@ -8,19 +8,21 @@ function BookList(){
 
     const {register,handleSubmit,reset} = useForm();
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
 
 
 
     // Fetch Books
     const fetchBooks = async(data={})=>{
 
-        let url = 'http://localhost:5000/api/books/getbooks';
+        let url = `${API_URL}/api/books/getbooks`;
 
         // Search Books
         if(data.searchType && data.searchValue){
 
             url =
-            `http://localhost:5000/api/books/getbooks?${data.searchType}=${data.searchValue}`;
+            `${API_URL}/api/books/getbooks?${data.searchType}=${data.searchValue}`;
 
         }
 
@@ -74,7 +76,7 @@ function BookList(){
 
         const response = await fetch(
 
-            `http://localhost:5000/api/books/checkout/${id}`,
+            `${API_URL}/api/books/checkout/${id}`,
 
             {
 
@@ -106,7 +108,7 @@ function BookList(){
 
         const response = await fetch(
 
-            `http://localhost:5000/api/books/return/${id}`,
+            `${API_URL}/api/books/return/${id}`,
 
             {
 
@@ -138,7 +140,7 @@ function BookList(){
 
         const response = await fetch(
 
-            `http://localhost:5000/api/books/delete/${id}`,
+            `${API_URL}/api/books/delete/${id}`,
 
             {
 
