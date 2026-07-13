@@ -1,5 +1,4 @@
-import React,{useState,useEffect} from 'react';
-
+import React, { useState, useEffect, useCallback } from 'react';
 import {useForm} from 'react-hook-form';
 
 function BookList(){
@@ -14,8 +13,7 @@ function BookList(){
 
 
     // Fetch Books
-    const fetchBooks = async(data={})=>{
-
+    const fetchBooks = useCallback(async (data = {}) => {
         let url = `${API_URL}/api/books/getbooks`;
 
         // Search Books
@@ -32,17 +30,17 @@ function BookList(){
 
         setBooks(result.data);
 
-    };
+    }, [API_URL]);;
 
 
 
 
     // Load All Books Initially
-    useEffect(()=>{
+    useEffect(() => {
 
         fetchBooks();
-
-    },[]);
+    
+    }, [fetchBooks]);
 
 
 
