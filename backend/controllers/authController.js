@@ -90,7 +90,7 @@ exports.loginUser = async(req,res)=>{
         if(!isMatch){
 
             return res.status(400).json({
-                message:'Invalid password'
+                message:'Invalid email or password'
             });
 
         }
